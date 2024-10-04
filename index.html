@@ -1,54 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="This is the homepage for the interactive media web page">
     <meta name="author" content="Kesavan Naicker">   
     <meta name="keywords" content="Interactive Media, Web design, Game development, Blogs, Essays">
     <title>WSOA3028A Interactive Media Homepage</title>
+    
+    <!-- External CSS file -->
+    <link rel="stylesheet" href="./CSS/Globe_Style.CSS"> 
 
-<head>
+    <!-- Import JavaScript files -->
+    <script src="./JavaScript/menu.js" type="module"></script>
+    <script src="./JavaScript/footer.js" type="module"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script> <!-- D3.js library -->
+    <script src="./JavaScript/globe.js" type="module"></script>
 
-    <link rel="stylesheet" href="./CSS/Globe_Style.CSS"> <!-- External CSS file -->
-
+    <!-- Initialize menu -->
     <script type="module">
-        import { initialise } from "./JavaScript/menu.js";
-        initialise("Home")
+      import { initialise } from "./JavaScript/menu.js";
+      initialise("Home");
     </script>
-     <script src="./JavaScript/menu.js" type="module"></script>
-     <script src="./JavaScript/footer.js" type="module"></script>
-     <script src="https://d3js.org/d3.v7.min.js"></script> <!-- D3.js library -->
+  </head>
 
-
-
-
-</head>
-<body>
-
+  <body>
     <header>
-        <h1>Homepage</h1>
-        
-        <script src="Scripts/mouseEvents.js" type="module"></script>
-
-        <nav class="navList">
-
-            <section>
-                <canvas id="globe" width="800" height="600"></canvas> <!-- Canvas for the globe -->
-            </section>
-
-        </nav>
+      <h1>Homepage</h1>
+      <nav class="navList"></nav>
     </header>
 
     <main>
-        <section class="intro-section">
-            <h2>Hey Yo</h2>
-            <p>Welcome to my little website. I'm Kesavan and I'll be using this to post all my work for Interactive Media here.</p>
+      <section class="intro-section">
+        <h2>Hey Yo</h2>
+        <p>Welcome to my little website. I'm Kesavan and I'll be using this to post all my work for Interactive Media here.</p>
+        <section>
+          <canvas id="globe" width="800" height="600"></canvas> <!-- Canvas for the globe -->
         </section>
-    
+      </section>
     </main>
     
-    <footer>
-    </footer>
-    <script src="./JavaScript/globe.js" type="module"></script>
-
+    <footer></footer>
+  </body>
 </html>

@@ -1,44 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="This is the homepage for the interactive media web page">
+    <meta name="description" content="This is the theory page for the interactive media web page">
     <meta name="author" content="Kesavan Naicker">   
     <meta name="keywords" content="Interactive Media, Web design, Game development, Blogs, Essays">
-    <title>WSOA3028A Interactive Media Homepage</title>
+    <title>WSOA3028A Interactive Media Theory Page</title>
 
-<head>
+    <!-- Import JavaScript files -->
+    <script src="../JavaScript/menu.js" type="module"></script>
+    <script src="../JavaScript/footer.js" type="module"></script>
 
+    <!-- Initialize menu -->
     <script type="module">
-        import { initialise } from '../JavaScript/menu.js';
-        initialise("Theory");  // "Theory" is the current page
+      import { initialise } from '../JavaScript/menu.js';
+      initialise("Theory");
     </script>
-    </script>
-     <script src="../JavaScript/menu.js" type="module"></script>
+  </head>
 
-
-</head>
-<body>
-
+  <body>
     <header>
-        <h1>Theory</h1>
-        
-        <script src="Scripts/mouseEvents.js" type="module"></script>
-
-        <nav class="navList">
-
-        </nav>
+      <h1>Theory</h1>
+      <nav class="navList"></nav>
     </header>
 
     <main>
-        <section class="intro-section">
-            <h2>Hey Yo</h2>
-            <p>Welcome to my little website. I'm Kesavan and I'll be using this to post all my work for Interactive Media here.</p>
-        </section>
-    
+      <section class="intro-section">
+        <h2>Theory Section</h2>
+        <p>This page contains theory-related content for Interactive Media.</p>
+      </section>
     </main>
     
     <footer>
-        <p>Brought To You By The Shadow Government, 2024. All rights reserved</p>
+      <p>Brought To You By The Shadow Government, 2024. All rights reserved</p>
     </footer>
+  </body>
 </html>
