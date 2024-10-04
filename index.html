@@ -7,81 +7,48 @@
     <meta name="keywords" content="Interactive Media, Web design, Game development, Blogs, Essays">
     <title>WSOA3028A Interactive Media Homepage</title>
 
-    <!-- Importing D3.js for data visualization and globe rendering -->
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="https://unpkg.com/topojson@3"></script>
-    
-    <!-- Versor library for globe rotation -->
-    <script src="versor.js"></script>
+<head>
 
-    <!-- Menu and Footer initializations -->
+    <link rel="stylesheet" href="./CSS/Globe_Style.CSS"> <!-- External CSS file -->
+
     <script type="module">
         import { initialise } from "./JavaScript/menu.js";
-        initialise("Home");
+        initialise("Home")
     </script>
+     <script src="./JavaScript/menu.js" type="module"></script>
+     <script src="./JavaScript/footer.js" type="module"></script>
+     <script src="https://d3js.org/d3.v7.min.js"></script> <!-- D3.js library -->
 
-    <script type="module">
-        import { footerInit } from "./JavaScript/footer.js";
-        footerInit();
-    </script>
 
-    <!-- Globe initialization -->
-    <script src="./JavaScript/globe.js" defer></script>
-    
-    <!-- Styling for the webpage -->
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-            text-align: center;
-        }
-        header {
-            padding: 1rem;
-            background-color: #333;
-            color: white;
-        }
-        main {
-            margin: 20px;
-        }
-        footer {
-            padding: 1rem;
-            background-color: #333;
-            color: white;
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-        }
-        canvas {
-            background-color: #121212;
-            margin: 20px auto;
-            display: block;
-        }
-    </style>
+
+
 </head>
-
 <body>
-    <!-- Header with navigation menu -->
+
     <header>
         <h1>Homepage</h1>
-        <nav class="navList"></nav>
+        
+        <script src="Scripts/mouseEvents.js" type="module"></script>
+
+        <nav class="navList">
+
+            <section>
+                <canvas id="globe" width="800" height="600"></canvas> <!-- Canvas for the globe -->
+            </section>
+
+        </nav>
     </header>
 
-    <!-- Main content section -->
     <main>
         <section class="intro-section">
             <h2>Hey Yo</h2>
             <p>Welcome to my little website. I'm Kesavan and I'll be using this to post all my work for Interactive Media here.</p>
         </section>
-
-        <!-- Canvas element for the interactive globe -->
-        <canvas id="globe" width="800" height="600"></canvas>
+    
     </main>
+    
+    <footer>
+    </footer>
+    <script src="./JavaScript/globe.js" type="module"></script>
 
-    <!-- Footer initialization -->
-    <footer></footer>
-
-    <!-- Optional: Mouse events or other interactive elements -->
-    <script src="Scripts/mouseEvents.js" type="module"></script>
-</body>
 </html>
