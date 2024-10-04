@@ -1,3 +1,5 @@
+const root = "/Assignment-3_Commercial-Website_2583111";
+
 const menuItems = [
     { name: "Home", href: "/index.html" },
     { name: "Theory", href: "/Theory/index.html" },
