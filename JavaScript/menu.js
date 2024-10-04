@@ -1,4 +1,4 @@
-const root = "/WSOA3028A_2583111";
+const root = "/WSOA3028A_2583111/Assignment-3_Commercial-Website_2583111";
 
 const menuItems = [
     { name: "Home", href: root + "/index.html" },
