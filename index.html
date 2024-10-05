@@ -9,31 +9,26 @@
     <title>WSOA3028A Interactive Media Homepage</title>
     
     <!-- External CSS files -->
-    <link rel="stylesheet" href="./CSS/Main_Style.CSS"> 
-    <link rel="stylesheet" href="./CSS/Header_Footer_Style.CSS"> 
-    <link rel="stylesheet" href="./CSS/Background_Style.CSS"> 
-    <link rel="stylesheet" href="./CSS/Globe_Style.CSS"> 
+    <link rel="stylesheet" href="./CSS/Main_Style.css"> 
+    <link rel="stylesheet" href="./CSS/Header_Footer_Style.css"> 
+    <link rel="stylesheet" href="./CSS/Background_Style.css"> 
+    <link rel="stylesheet" href="./CSS/Globe_Style.css"> 
 
-
-    
     <!-- D3 and TopoJSON libraries -->
     <script src="https://d3js.org/d3.v6.min.js"></script>
     <script src="https://d3js.org/topojson.v3.min.js"></script>
-
+    
     <!-- Menu initialization script -->
     <script type="module">
         import { initialise } from "./JavaScript/menu.js";
         initialise("Home");
     </script>
-    <script type="module" src="./JavaScript/menu.js"></script>
-    <script src="./JavaScript/starGenerator.js"></script>
-    <script src="./JavaScript/footer.js"></script>
-
 </head>
 
 <body>
     <header>
         <nav class="nav-section">
+            <!-- You can add navigation items here -->
         </nav>
     </header>
 
@@ -51,9 +46,13 @@
     </main>
     
     <footer>
+        <!-- Footer content can go here -->
     </footer>
 
-    <!-- Globe functionality script -->
+    <!-- JavaScript files -->
+    <script type="module" src="./JavaScript/menu.js"></script>
+    <script src="./JavaScript/starGenerator.js"></script>
+    <script src="./JavaScript/footer.js"></script>
     <script src="./JavaScript/globe.js"></script>
 </body>
 </html>
