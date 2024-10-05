@@ -1,31 +1,23 @@
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #f0f0f0;
-    margin: 0;
-}
-
-header {
-    background-color: #333;
-    padding: 10px 0;
-    color: white;
-}
-
-h1 {
-    margin: 0;
-}
-
-canvas {
-    margin: 20px auto;
-    display: block;
-    background-color: black;
-}
-
-footer {
-    background-color: #333;
-    padding: 10px;
-    color: white;
-    position: fixed;
-    bottom: 0;
+/* Globe section */
+#globe-section {
     width: 100%;
+    max-width: 800px; /* Constrain the width */
+    text-align: center;
+    margin: 0 auto;
+}
+
+#globe-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 500px; /* Fixed height for the globe */
+    border: 1px solid #ccc; /* Light border for the container */
+    border-radius: 5px;
+    background-color: #f0f0f0; /* Light background */
+}
+
+svg {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 50%; /* Round SVG to match globe shape */
 }

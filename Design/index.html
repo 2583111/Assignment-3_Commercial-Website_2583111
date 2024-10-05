@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="This is the design page for the interactive media web page">
@@ -8,32 +8,38 @@
     <meta name="keywords" content="Interactive Media, Web design, Game development, Blogs, Essays">
     <title>WSOA3028A Interactive Media Design Page</title>
 
+    <!-- External CSS files -->
+    <link rel="stylesheet" href="../CSS/Main_Style.CSS"> 
+    <link rel="stylesheet" href="../CSS/Header_Footer_Style.css"> 
+    <link rel="stylesheet" href="../CSS/Background_Style.css"> 
+
     <!-- Import JavaScript files -->
     <script src="../JavaScript/menu.js" type="module"></script>
     <script src="../JavaScript/footer.js" type="module"></script>
 
-    <!-- Initialize menu -->
+    <!-- Menu initialization script -->
     <script type="module">
-      import { initialise } from '../JavaScript/menu.js';
-      initialise("Design");
+        import { initialise } from "../JavaScript/menu.js";
+        initialise("Design");
     </script>
-  </head>
+    <script src="../JavaScript/starGenerator.js"></script>
 
-  <body>
+</head>
+
+<body>
     <header>
-      <h1>Design</h1>
-      <nav class="navList"></nav>
+        <nav class="nav-section">
+        </nav>
     </header>
 
     <main>
-      <section class="intro-section">
-        <h2>Design Section</h2>
-        <p>This page contains design-related content for Interactive Media.</p>
-      </section>
+        <section class="intro-section">
+            <h2>Design Section</h2>
+            <p>This page contains design-related content for Interactive Media.</p>
+        </section>
     </main>
-
+    
     <footer>
-      <p>Brought To You By The Shadow Government, 2024. All rights reserved</p>
     </footer>
-  </body>
+</body>
 </html>

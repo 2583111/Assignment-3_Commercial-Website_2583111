@@ -1,0 +1,64 @@
+/* Background and overall body styling */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black; /* Dark background */
+    font-family: Arial, sans-serif; /* Unified font-family across the site */
+}
+
+/* Header styling */
+header {
+    /*background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent background */
+    padding: 1em;
+    text-align: center;
+    position: relative;
+    z-index: 10; /* Ensure header is above other elements */
+}
+
+main {
+    background-color: white;
+    width: 80vw; /* Width relative to viewport */
+    min-height: calc(100vh - 60px); /* Minimum height to fill the screen minus header */
+    margin: 20px auto; /* Add margin for better spacing and centering */
+    padding: 2em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+    display: flex;
+    flex-direction: column; /* Allow stacking of content */
+    justify-content: flex-start; /* Start content from the top */
+    overflow: visible; /* Remove scroll from main, allow natural growth */
+}
+
+/* Starry background */
+#starry-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 0; /* Stars in the background */
+}
+
+/* Sections: Globe and Intro */
+.intro-section, #globe-section {
+    position: relative;
+    z-index: 1; /* Sections above starry background */
+    background-color: rgba(255, 255, 255, 0.8); /* Transparent background */
+    padding: 20px;
+    border-radius: 10px;
+    margin: 50px auto;
+    max-width: 600px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Stars */
+.star {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0.8;
+}
+
+.star.large { width: 3px; height: 3px; }
+.star.medium { width: 2px; height: 2px; }
+.star.small { width: 1px; height: 1px; }

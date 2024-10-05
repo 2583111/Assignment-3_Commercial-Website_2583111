@@ -1,81 +1,50 @@
-// Select the canvas element and set up a 2D context
-const canvas = document.getElementById('globe');
-const context = canvas.getContext('2d');
+// Set the dimensions and create SVG element
+const width = 600, height = 600;
+const svg = d3.select("#globe-container").append("svg")
+  .attr("width", width)
+  .attr("height", height);
 
-// Set up the projection for the globe (orthographic projection)
-const projection = d3.geoOrthographic()
-    .scale(300) // Scale of the globe
-    .translate([canvas.width / 2, canvas.height / 2]) // Center it on the canvas
-    .rotate([0, -30]); // Initial rotation
+// Define projection and path generator
+const projection = d3.geoOrthographic() // Globe projection
+  .scale(300)
+  .translate([width / 2, height / 2])
+  .clipAngle(90);
 
-// Path generator for the projection
-const path = d3.geoPath(projection, context);
+const path = d3.geoPath().projection(projection);
 
-// Sphere for the globe outline
-const sphere = { type: 'Sphere' };
+// Create graticule (grid lines on the globe)
+const graticule = d3.geoGraticule();
 
-// Load and draw the globe
-d3.json('https://d3js.org/world-50m.v1.json').then(world => {
-    const land = topojson.feature(world, world.objects.land);
-    drawGlobe(land);
-    enableDrag(land);
-});
+// Load and render the globe (land)
+d3.json("https://d3js.org/world-110m.v1.json").then(world => {
+  const land = topojson.feature(world, world.objects.land);
 
-// Function to draw the globe
-function drawGlobe(land) {
-    context.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
+  svg.append("path")
+    .datum({ type: "Sphere" }) // Sphere for the globe's outline
+    .attr("d", path)
+    .attr("fill", "#ADD8E6") // Light blue for the oceans
+    .attr("stroke", "#000");
 
-    // Draw the sphere (globe outline)
-    context.beginPath();
-    path(sphere);
-    context.fillStyle = '#ddeeff';
-    context.fill();
+  svg.append("path")
+    .datum(graticule)
+    .attr("d", path)
+    .attr("fill", "none")
+    .attr("stroke", "#ccc"); // Gray lines for the graticule
 
-    // Draw the landmass
-    context.beginPath();
-    path(land);
-    context.fillStyle = '#0055aa'; // Land color
-    context.fill();
+  svg.append("path")
+    .datum(land)
+    .attr("d", path)
+    .attr("fill", "#228B22") // Green for the land
+    .attr("stroke", "#000");
 
-    // Draw the outline of the globe
-    context.beginPath();
-    path(sphere);
-    context.strokeStyle = '#333';
-    context.stroke();
-}
-
-// Function to enable drag rotation
-function enableDrag(land) {
-    let lastX, lastY, rotation = projection.rotate();
-
-    // Add a 'mousedown' event listener
-    canvas.addEventListener('mousedown', function(event) {
-        lastX = event.pageX;
-        lastY = event.pageY;
-
-        // Add mousemove and mouseup events for dragging
-        canvas.addEventListener('mousemove', mouseMoved);
-        canvas.addEventListener('mouseup', mouseUp);
+  // Drag functionality
+  const drag = d3.drag()
+    .on("drag", (event) => {
+      const rotate = projection.rotate();
+      const k = 0.5; // Speed of rotation
+      projection.rotate([rotate[0] + event.dx * k, rotate[1] - event.dy * k]);
+      svg.selectAll("path").attr("d", path); // Re-render the paths with new rotation
     });
 
-    // Function for mouse move (rotate globe)
-    function mouseMoved(event) {
-        const dx = event.pageX - lastX;
-        const dy = event.pageY - lastY;
-
-        rotation[0] += dx * 0.5;
-        rotation[1] -= dy * 0.5;
-        projection.rotate(rotation);
-
-        drawGlobe(land);
-
-        lastX = event.pageX;
-        lastY = event.pageY;
-    }
-
-    // Function to stop dragging on mouseup
-    function mouseUp() {
-        canvas.removeEventListener('mousemove', mouseMoved);
-        canvas.removeEventListener('mouseup', mouseUp);
-    }
-}
+  svg.call(drag); // Enable dragging
+});

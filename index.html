@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="This is the homepage for the interactive media web page">
@@ -8,33 +8,49 @@
     <meta name="keywords" content="Interactive Media, Web design, Game development, Blogs, Essays">
     <title>WSOA3028A Interactive Media Homepage</title>
     
-    <!-- External CSS file -->
-    <link rel="stylesheet" href="./CSS/Globe_Style.CSS"> 
+    <!-- External CSS files -->
+    <link rel="stylesheet" href="./CSS/Main_Style.CSS"> 
+    <link rel="stylesheet" href="./CSS/Globe_Style.css"> 
+    <link rel="stylesheet" href="./CSS/Header_Footer_Style.css"> 
+    <link rel="stylesheet" href="./CSS/Background_Style.css"> 
 
+    <!-- D3 and TopoJSON libraries -->
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="https://d3js.org/topojson.v3.min.js"></script>
+
+    <!-- Menu initialization script -->
     <script type="module">
         import { initialise } from "./JavaScript/menu.js";
-        initialise("Home")
+        initialise("Home");
     </script>
-     <script src="./JavaScript/menu.js" type="module"></script>
+    <script src="./JavaScript/starGenerator.js"></script>
+    <script src="./JavaScript/footer.js"></script>
 
-  </head>
+</head>
 
-  <body>
+<body>
     <header>
-      <h1>Homepage</h1>
-      <nav class="navList"></nav>
+        <nav class="nav-section">
+        </nav>
     </header>
 
     <main>
-      <section class="intro-section">
-        <h2>Hey Yo</h2>
-        <p>Welcome to my little website. I'm Kesavan and I'll be using this to post all my work for Interactive Media here.</p>
-        <section>
-          <canvas id="globe" width="800" height="600"></canvas> <!-- Canvas for the globe -->
+        <section class="intro-section">
+            <h2>Hey Yo</h2>
+            <p>Welcome to my little website. I'm Kesavan and I'll be using this to post all my work for Interactive Media here.</p>
         </section>
-      </section>
+
+        <!-- D3 Globe Container -->
+        <section id="globe-section">
+            <h2>Interactive Globe</h2>
+            <div id="globe-container"></div>
+        </section>
     </main>
     
-    <footer></footer>
-  </body>
+    <footer>
+    </footer>
+
+    <!-- Globe functionality script -->
+    <script src="./JavaScript/globe.js"></script>
+</body>
 </html>
