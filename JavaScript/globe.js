@@ -19,8 +19,8 @@ const colorScale = d3.scaleOrdinal()
 // Define API keys and base URLs
 const lineApiKey = 'b3c050faaf739dc9f1bfbace6d9e9b9e';
 const lineGeoapifyKey = '92518de6e3a148fba8d948aecc4786cf';
-const lineApiUrl = (lat, lon) => `https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${lineApiKey}`;
-const lineGeoapifyUrl = (lat, lon) => `https://api.geoapify.com/v1/geocode/reverse?lat=${lat}&lon=${lon}&apiKey=${lineGeoapifyKey}`;
+const lineApiUrl = (lat, lon) => `HTTPS://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${lineApiKey}`;
+const lineGeoapifyUrl = (lat, lon) => `HTTPS://api.geoapify.com/v1/geocode/reverse?lat=${lat}&lon=${lon}&apiKey=${lineGeoapifyKey}`;
 
 const spinner = d3.select("body").append("div")
   .attr("class", "loading-spinner")
