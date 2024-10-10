@@ -17,7 +17,7 @@ const colorScale = d3.scaleOrdinal()
   .range(["#00FF00", "#FFFF00", "#FFA500", "#FF4500", "#8B0000"]); // Good -> Very Poor
 
 // Define API keys and base URLs
-//const apiKey = 'b3c050faaf739dc9f1bfbace6d9e9b9e';
+const apiKey = 'b3c050faaf739dc9f1bfbace6d9e9b9e';
 const geoapifyKey = '92518de6e3a148fba8d948aecc4786cf';
 const apiUrl = (lat, lon) => `http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${apiKey}`;
 const geoapifyUrl = (lat, lon) => `https://api.geoapify.com/v1/geocode/reverse?lat=${lat}&lon=${lon}&apiKey=${geoapifyKey}`;
