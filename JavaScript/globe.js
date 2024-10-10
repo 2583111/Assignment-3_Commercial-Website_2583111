@@ -17,10 +17,10 @@ const colorScale = d3.scaleOrdinal()
   .range(["#00FF00", "#FFFF00", "#FFA500", "#FF4500", "#8B0000"]); // Good -> Very Poor
 
 // Define API keys and base URLs
-const apiKey = 'b3c050faaf739dc9f1bfbace6d9e9b9e';
-const geoapifyKey = '92518de6e3a148fba8d948aecc4786cf';
-const apiUrl = (lat, lon) => `http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${apiKey}`;
-const geoapifyUrl = (lat, lon) => `https://api.geoapify.com/v1/geocode/reverse?lat=${lat}&lon=${lon}&apiKey=${geoapifyKey}`;
+const lineApiKey = 'b3c050faaf739dc9f1bfbace6d9e9b9e';
+const lineGeoapifyKey = '92518de6e3a148fba8d948aecc4786cf';
+const lineApiUrl = (lat, lon) => `https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${lineApiKey}`;
+const lineGeoapifyUrl = (lat, lon) => `https://api.geoapify.com/v1/geocode/reverse?lat=${lat}&lon=${lon}&apiKey=${lineGeoapifyKey}`;
 
 const spinner = d3.select("body").append("div")
   .attr("class", "loading-spinner")
@@ -38,11 +38,11 @@ const tooltip = d3.select("body").append("div")
   .style("z-index", "10");
 
 // Throttling variables
-let currentRequests = 0;
-const MAX_REQUESTS_PER_MINUTE = 60; // Adjust based on API limits
-const REQUEST_INTERVAL = 1000 * 60 / MAX_REQUESTS_PER_MINUTE; // Time interval between requests
-const requestQueue = []; // Queue for pending requests
-let requestTimer = null; // Timer for processing requests
+let lineCurrentRequests = 0;
+const lineMAX_REQUESTS_PER_MINUTE = 60; // Adjust based on API limits
+const lineREQUEST_INTERVAL = 1000 * 60 / lineMAX_REQUESTS_PER_MINUTE; // Time interval between requests
+const lineRequestQueue = []; // Queue for pending requests
+let lineRequestTimer = null; // Timer for processing requests
 
 // Load and render the simplified globe (with less detail)
 d3.json("https://d3js.org/world-110m.v1.json").then(world => {
@@ -99,8 +99,8 @@ d3.json("https://d3js.org/world-110m.v1.json").then(world => {
       spinner.style("display", "block");
 
       // Add the request to the queue
-      requestQueue.push({ lat, lon, pathElement: d3.select(this) });
-      processQueue(); // Process the queue
+      lineRequestQueue.push({ lat, lon, pathElement: d3.select(this) });
+      processLineQueue(); // Process the queue
     })
     .on("mouseover", (event, d) => {
       // Darken country on hover
@@ -156,7 +156,7 @@ d3.json("https://d3js.org/world-110m.v1.json").then(world => {
 
   // Function to fetch extended AQI information
   async function fetchExtendedAQIInfo(lat, lon) {
-    const url = apiUrl(lat, lon);
+    const url = lineApiUrl(lat, lon);
     try {
       const response = await fetch(url);
       if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
@@ -177,7 +177,7 @@ d3.json("https://d3js.org/world-110m.v1.json").then(world => {
 
   // Function to fetch air pollution data for a given location (lat, lon)
   async function fetchAirQuality(lat, lon) {
-    const url = apiUrl(lat, lon);
+    const url = lineApiUrl(lat, lon);
     try {
       const response = await fetch(url);
       if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
@@ -191,7 +191,7 @@ d3.json("https://d3js.org/world-110m.v1.json").then(world => {
 
   // Function to fetch country name using Geoapify
   async function fetchCountryName(lat, lon) {
-    const url = geoapifyUrl(lat, lon);
+    const url = lineGeoapifyUrl(lat, lon);
     try {
       const response = await fetch(url);
       if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
@@ -204,13 +204,13 @@ d3.json("https://d3js.org/world-110m.v1.json").then(world => {
   }
 
   // Function to process the request queue
-  function processQueue() {
+  function processLineQueue() {
     // If there are no more requests or if we're currently at max capacity, return
-    if (requestQueue.length === 0 || currentRequests >= MAX_REQUESTS_PER_MINUTE) return;
+    if (lineRequestQueue.length === 0 || lineCurrentRequests >= lineMAX_REQUESTS_PER_MINUTE) return;
 
     // Process the next request in the queue
-    const { lat, lon, pathElement } = requestQueue.shift(); // Get the next request
-    currentRequests++;
+    const { lat, lon, pathElement } = lineRequestQueue.shift(); // Get the next request
+    lineCurrentRequests++;
 
     // Show spinner while loading data
     spinner.style("display", "block");
@@ -219,23 +219,23 @@ d3.json("https://d3js.org/world-110m.v1.json").then(world => {
     fetchAirQuality(lat, lon).then(aqi => {
       // Hide spinner once data is loaded
       spinner.style("display", "none");
-      currentRequests--;
+      lineCurrentRequests--;
 
       // Color the country based on AQI index
       pathElement.attr("fill", aqi ? colorScale(aqi) : "#ccc");
       pathElement.datum().aqi = aqi; // Store AQI in datum
 
       // Re-process the queue after a delay
-      if (!requestTimer) {
-        requestTimer = setTimeout(() => {
-          requestTimer = null; // Clear the timer
-          processQueue(); // Process the queue again
-        }, REQUEST_INTERVAL);
+      if (!lineRequestTimer) {
+        lineRequestTimer = setTimeout(() => {
+          lineRequestTimer = null; // Clear the timer
+          processLineQueue(); // Process the queue again
+        }, lineREQUEST_INTERVAL);
       }
     });
 
     // Continue processing the queue
-    processQueue();
+    processLineQueue();
   }
 
   // Function to rotate the globe
