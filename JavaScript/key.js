@@ -1,4 +1,3 @@
-// Function to create AQI legend
 function createAQILegend() {
   const legendData = [
     { level: 1, color: "#00FF00", status: "Good" },

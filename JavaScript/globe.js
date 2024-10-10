@@ -1,10 +1,8 @@
-// Set the dimensions and create SVG element
 const width = 800, height = 800;
 const svg = d3.select("#globe-container").append("svg")
   .attr("width", width)
   .attr("height", height);
 
-// Define projection and path generator
 const projection = d3.geoOrthographic()
   .scale(400)
   .translate([width / 2, height / 2])
@@ -24,7 +22,6 @@ const geoapifyKey = '92518de6e3a148fba8d948aecc4786cf';
 const apiUrl = (lat, lon) => `http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${apiKey}`;
 const geoapifyUrl = (lat, lon) => `https://api.geoapify.com/v1/geocode/reverse?lat=${lat}&lon=${lon}&apiKey=${geoapifyKey}`;
 
-// Create loading spinner
 const spinner = d3.select("body").append("div")
   .attr("class", "loading-spinner")
   .style("display", "none");

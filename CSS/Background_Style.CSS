@@ -17,35 +17,4 @@ body {
     height: auto; /* Allow the body to grow with the content */
 }
 
-/* Header styling */
-header {
-    padding: 1em;
-    text-align: center;
-    position: relative;
-    z-index: 10; /* Ensure header is above other elements */
-}
 
-/* Main content area */
-main {
-    background-color: white;
-    width: 80vw; /* Width relative to viewport */
-    min-height: calc(100vh - 60px); /* Minimum height to fill the screen minus header */
-    margin: 20px auto; /* Add margin for better spacing and centering */
-    padding: 2em;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Shadow for depth */
-    display: flex;
-    flex-direction: column; /* Allow stacking of content */
-    justify-content: flex-start; /* Start content from the top */
-    overflow: visible; /* Allow content to naturally grow */
-}
-
-/* Sections: Globe and Intro */
-.intro-section, #globe-section {
-    position: relative;
-    background-color: rgba(255, 255, 255, 0.8); /* Slight transparency */
-    padding: 20px;
-    border-radius: 10px;
-    margin: 50px auto;
-    max-width: 600px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}

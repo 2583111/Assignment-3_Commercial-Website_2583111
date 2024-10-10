@@ -1,8 +1,13 @@
-/* Main section styling */
+/* Main content area */
 main {
-    padding: 20px;
+    background-color: white;
+    width: 80vw; /* Width relative to viewport */
+    min-height: calc(100vh - 60px); /* Minimum height to fill the screen minus header */
+    margin: 20px auto; /* Add margin for better spacing and centering */
+    padding: 2em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Shadow for depth */
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
+    flex-direction: column; /* Allow stacking of content */
+    justify-content: flex-start; /* Start content from the top */
+    overflow: visible; /* Allow content to naturally grow */
 }

@@ -36,10 +36,138 @@
         <section class="intro-section">
             <h2>Theory Section</h2>
             <p>This page contains theory-related content for Interactive Media.</p>
-        </section>
+            
+            <label for="essayDropdown">Select an Essay:</label>
+            <select id="essayDropdown" onchange="showEssayContent()">
+                <option value="">--Select Essay--</option>
+                <option value="essay1">Assignment 2: Critical Analysis Essay</option>
+            </select>
+            
+            <div id="essayContent">
+                <h3>Assignment 2: Critical Analysis Essay</h3>
+                <p>By 2583111</p>
+                <p>The use of data journalism has transformed the provision of information and storytelling in the digital era, 
+                which allows journalists to use the power that is provided by data to communicate factual, compelling, and complex 
+                information to readers in visually simple, efficient, and effective ways. The core of this transformation is the 
+                use of data visualization, which has become a considerable tool for creating narratives that are not only 
+                informative but also engaging, efficient, and accessible to diverse audiences. The term data visualization is 
+                core focus in this essay but what is it, what is my understanding on it, when looking at the reading 
+                "Overview of Data Visualization" to help form my understanding, two definitions resonated with me, the first by 
+                Manovich (2010), “a transformation of quantified data which is not visual into a visual representation” (Qi Li, 
+                2020) and the second by Bikakis (2018) who defines it as a "presentation of data in a pictorial or graphical 
+                format" (Qi Li, 2020), these explanations both helped my understanding, specifically the point of translating 
+                data to a visual form, I also appreciate Bikakis (2018) further detailing the objective of data visualization 
+                as it "provides users with intuitive means to interactively explore and analyse data, enabling them to effectively 
+                identify interesting patterns, infer correlations and causalities, and supports sense-making activities" (Qi Li, 
+                2020). This helped form my working definition of data visualizations as a form of translating complex data and 
+                representing it in visual form to effectively and efficiently help allow for quicker interpretation and easier 
+                communication to users.</p>
+                
+                <p>The subject up for analysis is a piece by The Guardian titled “A third of Americans are already facing 
+                above-average warming,” which was published more than 2 years ago, roughly during 2021. The message the article 
+                wants to convey is that a large portion of the U.S. population is experiencing an above-average temperature 
+                increase, "with 499 counties already breaching 1.5C (2.7F) of heating." (Anon., 2022) This significant warming, 
+                driven by climate change, is unevenly distributed across the country, with hotspots emerging in areas like California 
+                to the northeast. The article highlights the severe impacts of this warming, including increased heatwaves, 
+                wildfires, and permafrost melting, which are reshaping local environments and communities. The situation highlights 
+                the urgent need for global efforts to limit further temperature rises and mitigate climate-related risks.</p>
+
+                <p>The piece uses two forms of data visualization: a bar chart, which is used to compare categorical data; the one 
+                in the article uses it to count the U.S. population that is living in counties that have either warmed by 1.5C, warmed 
+                but less than 1.5C, or decreased, allowing for easy visual comparison as the bars are stacked.</p>
+
+                <p>Additionally, choropleth maps are used to illustrate geographic data across the U.S. The map uses a divergent 
+                or bipolar progression/scale to represent the different temperature data values across different counties, which 
+                provides an intuitive visual representation of spatial differences. The rationale behind using these forms of data 
+                visualization, the choropleth map and bar charts, is that both effectively represent the data and are easily readable.</p>
+
+                <p>The bar chart is ideal for comparing categories as well as variables within categories. Even with stacking within 
+                the data found in a bar, they still provide a clear visual distinction between groups. The choropleth map has the 
+                ability to convey complex geographic data in a simple, visually appealing format; this is done by color-coding the 
+                counties based on temperature data between the years. The map makes it easy for readers to identify patterns, such 
+                as areas with higher values using dark red/maroon and lower values using a light blue. This colour difference is 
+                important, as stated in "Principles of Effective Data Visualization," that "colour represents information, whether 
+                in a direct and obvious way," (Midway, 2020) and "colour will often be the first visual information a reader gets, 
+                and with this knowledge, colour should be strategically used to amplify your visual message, whether in an indirect 
+                and subtle way," (Midway, 2020) and by having it color-coded it makes the data presentable and easy to interpret 
+                and readable. The use of the choropleth map is particularly suitable for data with a geographic component, as it 
+                provides a direct visual link between the data and the physical locations it represents. The use of these data 
+                visualization forms ensures that the data is not only accessible but also engaging, as it enhances the reader's 
+                ability to quickly and accurately interpret the information.</p>
+
+                <p>I believe interactivity plays a crucial role in enhancing user engagement within data visualization pieces. In the 
+                article, the interactive elements are tied to both data visualization forms; this is effective as it allows users to 
+                explore the data dynamically, providing for an experience that can significantly help deepen the users understanding 
+                of the data. The choropleth map can be interacted with; particularly, the user is able to hover over different counties 
+                on the map to reveal more detailed data of the temperature, that of which was recorded in 1895, 2021, and the 
+                change/increase.</p>
+
+                <p>Additionally, the bar graph interactions lie within the bars, as when the user hovers over them, the data is 
+                presented more clearly, not only revealing the percentages but also the total number of people living in the county.</p>
+
+                <p>These kinds of forms of interactivity transform the user experience from a passive recipient of the information into 
+                an active participant, enabling them to engage with the data in a way that is both intuitive and engaging. Personally, 
+                I believe the interactive elements in the article are effective both in demonstration and execution. The data is 
+                represented well and is easily readable; then the ability to interact with the data furthers the user's engagement from 
+                passive reading to actively engaging, but it also deepens understanding of the complex information being presented. For 
+                example, being able to hover over different counties to see the specific values allows for a more nuanced interpretation 
+                of the data. I think this is particularly valuable in data journalism, where the goal is often to communicate intricate 
+                stories that require the reader to understand multiple layers of complex information. If I had a suggestion for 
+                improvement, it would be to add a feature that allows filtering data from any time after 1895, enhancing interactivity, 
+                and personalizing the experience for the user.</p>
+
+                <p>Reflecting on my experiences with data visualization, I realize how much it shapes the way I interact with and 
+                interpret data. It enables me to quickly grasp the effectiveness of what's being presented while also appreciating 
+                the complexity involved in creating clear and understandable visualizations. I understand how challenging it can be to 
+                convey complex information effectively while ensuring it's accessible to all users. This highlights the importance of 
+                designing interactive visualizations that cater to users with varying levels of understanding, making the data 
+                accessible to a broad audience.</p>
+
+                <p>The article effectively applies User Interface (UI) and User Experience (UX) design principles, which is crucial for 
+                enhancing data visualization. The clean and uncluttered visual elements allow users to focus on the data; this can be 
+                seen through the colour scheme used, as it is a divergent scale that intuitively represents temperature differences—warm 
+                colours indicating higher temperatures and cool colours indicating lower ones. This design choice facilitates quick 
+                comprehension and immediate understanding of the data's meaning, which is essential for effective communication, as 
+                stated in "The Basic Principles of User Interface Design." It's important to strive for clarity as to "Avoid anything 
+                that confuses people or doesn’t help them interact." (Anon., 2024). Another strength is the flexibility of the data 
+                visualization elements as they scale to different devices, following another principle: "Create a UI that will work and 
+                look great across multiple platforms." (Anon., 2024). The bar graphs have exceptional flexibility as they change 
+                orientation as well.</p>
+
+                <p>The only other issue is that the interactivity from the Choropleth maps is removed as there is no mouse to hover, 
+                and an element displays additional information. Despite these strengths, there are areas where the UI/UX design could 
+                be improved. An example I stated early was to add a feature to filter data by specific years after 1895, which would 
+                enhance user interactivity and engagement by having a personalized experience, which would deepen their understanding 
+                of the data presented.</p>
+
+                <p>UI/UX design significantly influences the user’s behaviour and understanding. A well-designed interface encourages 
+                users to engage more with the data, leading to a greater comprehension of the information. The article demonstrates how 
+                UI/UX design plays a pivotal role in ensuring that data is not only accessible but also engaging and informative.</p>
+
+                <p>The Guardian’s article excels in data-driven storytelling by integrating data visualizations like the choropleth map 
+                and bar chart with a compelling narrative on climate change's impact. These visualizations are both informative and 
+                emotionally engaging, with interactive elements allowing for engaging exploration of the data. The narrative provides 
+                crucial context, making complex data more relatable and easier to understand. The emotional impact is amplified through 
+                colour choices, effectively communicating the seriousness of the issue. This article highlights the importance of 
+                interactivity, narrative, and emotional design in creating impactful, accessible data visualizations that both inform and 
+                engage audiences.</p>
+
+                <h4>References</h4>
+                <ul>
+                    <li>Anon., 2022. A third of Americans are already facing above-average warming. [Online] Available at: 
+                    https://www.theguardian.com/environment/2022/feb/05/americans-above-average-temperature-increase-climate-crisis</li>
+                    <li>Anon., 2024. The Basic Principles of User Interface Design. [Online] Available at: https://www.uxpin.com/studio/blog/ui-design-principles/</li>
+                    <li>Midway, S. R., 2020. Principles of Effective Data Visualization. Patterns.</li>
+                    <li>Qi Li, 2020. In: Overview of Data Visualization. Shanghai, China: Shanghai University of.</li>
+                </ul>
+            </div>        </section>
     </main>
     
     <footer>
     </footer>
+    <script src="../JavaScript/download.js"></script>
+
+
+
 </body>
 </html>

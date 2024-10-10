@@ -1,67 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="This is the homepage for the interactive media web page">
-    <meta name="author" content="Kesavan Naicker">   
+    <meta name="author" content="Kesavan Naicker">
     <meta name="keywords" content="Interactive Media, Web design, Game development, Blogs, Essays">
     <title>WSOA3028A Interactive Media Homepage</title>
-    
+
     <!-- External CSS files -->
-    <link rel="stylesheet" href="./CSS/Main_Style.CSS"> 
-    <link rel="stylesheet" href="./CSS/Header_Footer_Style.CSS"> 
-    <link rel="stylesheet" href="./CSS/Background_Style.CSS"> 
-    <link rel="stylesheet" href="./CSS/Globe_Style.CSS"> 
-    <link rel="stylesheet" href="./CSS/Key_Style.CSS"> 
-    <link rel="stylesheet" href="./CSS/Linegraph_Style.CSS">  
+    <link rel="stylesheet" href="./CSS/Main_Style.CSS">
+    <link rel="stylesheet" href="./CSS/Header_Footer_Style.CSS">
+    <link rel="stylesheet" href="./CSS/Background_Style.CSS">
+    <link rel="stylesheet" href="./CSS/Globe_Style.CSS">
+    <link rel="stylesheet" href="./CSS/Key_Style.CSS">
+    <link rel="stylesheet" href="./CSS/Linegraph_Style.CSS">
 
     <!-- D3 and TopoJSON libraries -->
     <script src="https://d3js.org/d3.v6.min.js"></script>
     <script src="https://d3js.org/topojson.v3.min.js"></script>
-    
+
     <!-- Menu initialization script -->
     <script type="module">
         import { initialise } from "./JavaScript/menu.js";
         initialise("Home");
     </script>
     <script type="module" src="./JavaScript/menu.js"></script>
-    <script src="./JavaScript/starGenerator.js"></script>
     <script src="./JavaScript/footer.js"></script>
 </head>
 
 <body>
     <header>
         <nav class="nav-section">
-            <!-- Navigation items can be added here -->
         </nav>
     </header>
 
     <main>
-        <section class="intro-section">
-            <h2>Welcome</h2>
-            <p>Welcome to my website. I'm Kesavan, and I'll be using this to post my work for Interactive Media.</p>
+        <section>
+            <h>People Aganist Air Pollution</h>
         </section>
 
-        <section id="globe-section">
-            <h2>Interactive Globe</h2>
-            <div id="globe-container"></div>
-            <div id="aqi-legend-container"></div> <!-- Add this line -->
+
+        <!-- Air Pollution Information Section -->
+        <section id="air-pollution-info">
+            <h2>Why Air Pollution?</h2>
+            <p>
+                Well, it is one of the most pressing environmental issues of our time, affecting the health and 
+                well-being of millions globally. The World Health Organization (WHO) estimates that air pollution 
+                contributes to an extreme amount of premature deaths each year, making it one of the largest 
+                environmental health risks facing mankind. Through the use of this website, I want to highlight 
+                and provide a deeper look at the state of air pollution across the world.
+            </p>
+            <p>
+                By choosing this theme, I hope to inform users about real-time air quality metrics while also 
+                providing historical data trends that show how air quality has changed over time.
+            </p>
         </section>
-        
+
+        <section>
+            <p>
+                The 3D world map serves as an interactive globe, which I use to visualize the quality of air in different parts of the world in real time. By spinning the globe and clicking on specific countries, you can view live data, and users can easily compare pollution levels across continents. This global perspective highlights the widespread nature of air pollution while allowing for in-depth analysis in localized areas.
+            </p>
+
+        </section>
+
+
+        <section id="globe-section">
+            <h2>World Map with AQI (Air quality index)</h2>
+            <div id="globe-container"></div>
+            <div id="aqi-legend-container"></div> 
+        </section>
+
+
+        <section>
+            <p>
+                The use of the line graph is more specific by offering a personalized and deeper dive into historical air quality trends. It will allow you to track air quality in specific countries, and that has changed over time.             </p>
+
+        </section>
+
         <!-- Line Graph Container -->
         <section id="linegraph-section">
-            <h2>Historical AQI for Selected Countries</h2>
+            <h2>Historical AQI for South Africa</h2>
             <div id="linegraph-container"></div>
         </section>
     </main>
-    
+
     <footer>
     </footer>
 
     <!-- JavaScript files -->
     <script src="./JavaScript/globe.js"></script>
     <script src="./JavaScript/key.js"></script>
-    <script src="./JavaScript/lineGraph.js"></script> <!-- Line graph script -->
-</body>
+    <script src="./JavaScript/lineGraph.js"></script> 
+
 </html>
