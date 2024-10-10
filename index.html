@@ -9,10 +9,12 @@
     <title>WSOA3028A Interactive Media Homepage</title>
     
     <!-- External CSS files -->
-    <link rel="stylesheet" href="./CSS/Main_Style.CSS"> 
-    <link rel="stylesheet" href="./CSS/Header_Footer_Style.CSS"> 
-    <link rel="stylesheet" href="./CSS/Background_Style.CSS"> 
-    <link rel="stylesheet" href="./CSS/Globe_Style.CSS"> 
+    <link rel="stylesheet" href="./CSS/Main_Style.css"> 
+    <link rel="stylesheet" href="./CSS/Header_Footer_Style.css"> 
+    <link rel="stylesheet" href="./CSS/Background_Style.css"> 
+    <link rel="stylesheet" href="./CSS/Globe_Style.css"> 
+    <link rel="stylesheet" href="./CSS/Key_Style.css"> 
+    <link rel="stylesheet" href="./CSS/Linegraph_Style.css">  
 
     <!-- D3 and TopoJSON libraries -->
     <script src="https://d3js.org/d3.v6.min.js"></script>
@@ -26,33 +28,40 @@
     <script type="module" src="./JavaScript/menu.js"></script>
     <script src="./JavaScript/starGenerator.js"></script>
     <script src="./JavaScript/footer.js"></script>
-
-
 </head>
 
 <body>
     <header>
         <nav class="nav-section">
-            <!-- You can add navigation items here -->
+            <!-- Navigation items can be added here -->
         </nav>
     </header>
 
     <main>
         <section class="intro-section">
-            <h2>Hey Yo</h2>
-            <p>Welcome to my little website. I'm Kesavan and I'll be using this to post all my work for Interactive Media here.</p>
+            <h2>Welcome</h2>
+            <p>Welcome to my website. I'm Kesavan, and I'll be using this to post my work for Interactive Media.</p>
         </section>
 
-        <!-- D3 Globe Container -->
         <section id="globe-section">
             <h2>Interactive Globe</h2>
             <div id="globe-container"></div>
+            <div id="aqi-legend-container"></div> <!-- Add this line -->
+        </section>
+        
+        <!-- Line Graph Container -->
+        <section id="linegraph-section">
+            <h2>Historical AQI for Selected Countries</h2>
+            <div id="linegraph-container"></div>
         </section>
     </main>
     
     <footer>
     </footer>
-    <script src="./JavaScript/globe.js"></script>
 
+    <!-- JavaScript files -->
+    <script src="./JavaScript/globe.js"></script>
+    <script src="./JavaScript/key.js"></script>
+    <script src="./JavaScript/lineGraph.js"></script> <!-- Line graph script -->
 </body>
 </html>

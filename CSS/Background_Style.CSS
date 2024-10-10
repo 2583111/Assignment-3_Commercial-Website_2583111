@@ -2,19 +2,30 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: black; /* Dark background */
+    background: linear-gradient(to bottom, 
+        #000000,       /* Start with black */
+        #001f3f 15%,   /* Dark navy blue */
+        #003366 30%,   /* Deep blue */
+        #004c99 45%,   /* Medium dark blue */
+        #0074D9 60%,   /* Sky blue */
+        #7FDBFF 75%,   /* Lighter blue */
+        #B0E0E6 85%,   /* Pale blue */
+        #FFEBCD 100%   /* End with peach/off-white */
+    );
     font-family: Arial, sans-serif; /* Unified font-family across the site */
+    min-height: 100vh; /* Ensure the gradient covers the viewport initially */
+    height: auto; /* Allow the body to grow with the content */
 }
 
 /* Header styling */
 header {
-    /*background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent background */
     padding: 1em;
     text-align: center;
     position: relative;
     z-index: 10; /* Ensure header is above other elements */
 }
 
+/* Main content area */
 main {
     background-color: white;
     width: 80vw; /* Width relative to viewport */
@@ -25,40 +36,16 @@ main {
     display: flex;
     flex-direction: column; /* Allow stacking of content */
     justify-content: flex-start; /* Start content from the top */
-    overflow: visible; /* Remove scroll from main, allow natural growth */
-}
-
-/* Starry background */
-#starry-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    z-index: 0; /* Stars in the background */
+    overflow: visible; /* Allow content to naturally grow */
 }
 
 /* Sections: Globe and Intro */
 .intro-section, #globe-section {
     position: relative;
-    z-index: 1; /* Sections above starry background */
-    background-color: rgba(255, 255, 255, 0.8); /* Transparent background */
+    background-color: rgba(255, 255, 255, 0.8); /* Slight transparency */
     padding: 20px;
     border-radius: 10px;
     margin: 50px auto;
     max-width: 600px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-
-/* Stars */
-.star {
-    position: absolute;
-    background-color: white;
-    border-radius: 50%;
-    opacity: 0.8;
-}
-
-.star.large { width: 3px; height: 3px; }
-.star.medium { width: 2px; height: 2px; }
-.star.small { width: 1px; height: 1px; }

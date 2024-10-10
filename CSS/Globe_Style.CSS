@@ -1,23 +1,32 @@
-/* Globe section */
+/* Globe Section */
 #globe-section {
     width: 100%;
-    max-width: 800px; /* Constrain the width */
+    max-width: 1200px; /* Adjusted max width */
     text-align: center;
-    margin: 0 auto;
+    margin: 0 auto; /* Center the globe section on the page */
 }
 
 #globe-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 500px; /* Fixed height for the globe */
-    border: 1px solid #ccc; /* Light border for the container */
-    border-radius: 5px;
-    background-color: #f0f0f0; /* Light background */
+    justify-content: center; /* Center the SVG horizontally */
+    align-items: center; /* Center the SVG vertically */
+    width: 100%; /* Use full width */
+    height: 800px; /* Fixed height */
+    border-radius: 5px; /* Rounded corners for globe container */
+    margin: 0 auto; /* Center the container on the page */
+    position: relative; /* Required for centering */
 }
 
-svg {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    border-radius: 50%; /* Round SVG to match globe shape */
+/* Center the SVG inside the container */
+#globe-container svg {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Enhanced shadow for better depth */
+    border-radius: 50%; /* Ensure globe is circular */
+    width: 100%; /* Use full width for responsiveness */
+    height: 100%; /* Use full height for responsiveness */
+    max-width: 800px; /* Max width for larger screens */
+    max-height: 800px; /* Max height for larger screens */
+    position: absolute; /* Allows the SVG to be centered */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centers the SVG both horizontally and vertically */
 }
